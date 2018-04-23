@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>RobotMonitorWidget</class>
  <widget class="RobotMonitorWidget" name="RobotMonitorWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>256</width>
+    <height>576</height>
+   </rect>
+  </property>
   <property name="minimumSize">
    <size>
     <width>200</width>
@@ -15,7 +23,16 @@
    <property name="spacing">
     <number>0</number>
    </property>
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -110,20 +127,40 @@
        </property>
       </column>
      </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Tier</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="tierSpinner">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>5</number>
+         </property>
+         <property name="value">
+          <number>2</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>
  </widget>
-<customwidgets>
+ <customwidgets>
   <customwidget>
    <class>RobotMonitorWidget</class>
    <extends>QWidget</extends>
    <header>rqt_robot_monitor.robot_monitor</header>
-  </customwidget>
-  <customwidget>
-   <class>TimelinePane</class>
-   <extends>QWidget</extends>
-   <header>rqt_robot_monitor.timeline_pane</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -139,6 +139,18 @@ class RobotMonitorWidget(QWidget):
                 tmp_tree = tmp_tree[p]
             tmp_tree.update(status, util.get_resource_name(status.name))
 
+            tier=5
+            module='?'
+
+            for kv in status.values:
+                if kv.key.lower()=='tier':
+                    tier = int(kv.value)
+                if kv.key.lower()=='module':
+                    module = kv.value
+
+            if tier > self.tierSpinner.value():
+                continue
+
             # Check for warnings
             if status.level == DiagnosticStatus.WARN:
                 name = status.name
